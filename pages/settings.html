@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        .settings-section {
+            margin-bottom: 20px;
+        }
+        
+        .setting-item {
+            margin-bottom: 15px;
+        }
+        
+        .setting-item label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .button-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+</head>
+<body dir="rtl">
+    <header>
+        <h1>إعدادات اللعبة</h1>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">عن اللعبة</a>
+            <a href="settings.html">الإعدادات</a>
+        </nav>
+    </header>
+    <main>
+        <section class="settings-section">
+            <h2>الإعدادات</h2>
+
+            <!-- Volume Control -->
+            <div class="setting-item">
+                <label for="volume">التحكم في الصوت:</label>
+                <input type="range" id="volume" min="0" max="100" value="50" oninput="updateVolume(this.value)">
+                <span id="volume-level">50%</span>
+            </div>
+
+            <!-- Theme Selection -->
+            <div class="setting-item">
+                <label for="theme">اختيار السمة:</label>
+                <select id="theme" onchange="changeTheme(this.value)">
+                    <option value="light">سمة فاتحة</option>
+                    <option value="dark">سمة داكنة</option>
+                </select>
+            </div>
+
+            <!-- Language Selection -->
+            <div class="setting-item">
+                <label for="language">اختيار اللغة:</label>
+                <select id="language" onchange="changeLanguage(this.value)">
+                    <option value="ar">العربية</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+
+        </section>
+
+        <!-- Back to Menu Button -->
+        <div class="button-container">
+            <button onclick="returnToMenu()">العودة إلى القائمة الرئيسية</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 لعبة "من سيربح المليون". جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // Update volume display
+        function updateVolume(value) {
+            document.getElementById('volume-level').innerText = value + '%';
+            // Add logic to control the game's volume if applicable
+        }
+
+        // Change theme dynamically
+        function changeTheme(theme) {
+            if (theme === 'dark') {
+                document.body.style.backgroundColor = '#121212';
+                document.body.style.color = '#ffffff';
+            } else {
+                document.body.style.backgroundColor = '#ffffff';
+                document.body.style.color = '#000000';
+            }
+        }
+
+        // Change language dynamically
+        function changeLanguage(language) {
+            if (language === 'en') {
+                alert('Language switched to English. (This feature is under development)');
+            } else {
+                alert('تم تغيير اللغة إلى العربية. (هذا الخيار قيد التطوير)');
+            }
+        }
+
+        // Return to main menu
+        function returnToMenu() {
+            window.location.href = 'index.html'; // Redirect to the main menu page
+        }
+    </script>
+</body>
+</html>

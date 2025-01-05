@@ -1,0 +1,92 @@
+body {
+    background-image: url('../imgs/win-million-4.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
+}
+.rules-container,.player-info {
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    text-align: right;
+}
+
+
+.rules-container ul li,.player-info input {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.rules-container h2 ,.player-info h2{
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffd700; /* لون ذهبي */
+    text-align: center;
+}
+
+.rules-container ul {
+    list-style-type: none;
+    padding: 0;
+    line-height: 1.8;
+}
+
+.rules-container ul li:before {
+    content: "⭐ ";
+    color: #ffd700; /* لون ذهبي */
+}
+.startGame{
+    height: 100%;
+}
+footer {
+    background-color: #001f3f;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #ffdc00;
+    font-size: 0.9rem;
+}

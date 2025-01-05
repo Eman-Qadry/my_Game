@@ -1,0 +1,143 @@
+body{
+    background-image: url('../imgs/win-million-4.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+#numbers {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    animation: scaleSmooth 2s ease-in-out;
+}
+
+@keyframes scaleSmooth {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(5);
+    }
+}
+#numbers.final {
+    font-size: 12em;
+    text-align: center;
+    color: white;
+    animation: finalScale 6s ease-in-out;
+}
+
+@keyframes finalScale {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(15);
+    }
+}
+
+
+
+#numbers.text {
+    
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff; /* Text color */
+}
+
+#numbers.text::before {
+    content: attr(data-text); /* Copy the text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(255, 255, 255); /* Shadow color */
+    z-index: -1; /* Place behind the text */
+    animation: moveShadow 5s infinite;
+}
+
+@keyframes moveShadow {
+    from {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+ 
+    to {
+        transform: translate(60px, 60px);
+        opacity: 0.2;
+    }
+}
+.menuContainer{
+    height: 100%; 
+    width: 100%;
+}
+.menuContainer img{
+    width:48%;
+    height: 100%;
+    display: none;
+    border-right: 8px solid #ffffffe4;
+}
+
+#menu {
+    display: none;
+    position: absolute;
+   top:20%;
+    right:0%;
+  
+    text-align: center;
+    color: white;
+    width: 50%;
+   justify-content: center;
+}
+
+#menu button {
+    display: block;
+   
+    padding: 15px 20px;
+    font-size: 1.5em;
+    width: 60%;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 20px ;
+    cursor: pointer;
+    text-align: center;
+    border:4px solid white;
+    margin:auto;
+}
+
+#menu button:hover {
+  
+    background-color:  #007BFF;
+}
+
+.menu-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}

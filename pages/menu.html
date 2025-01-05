@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Million Game</title>
+   <link rel="stylesheet" href="../css/indexStyle.css">
+      
+</head>
+<body>
+    <div id="background"></div>
+    <div id="loading">Loading...</div>
+    <div id="numbers"></div>
+    <div class="menuContainer" id="menuContainer">
+        <img src="../imgs/background.png" id="menuImg">
+        
+    <div id="menu">
+       
+        <button onclick="window.location.href='start-game.html'">ابدأ اللعب</button>
+        <button onclick="window.location.href='instructions.html'">تعليمات</button>
+        <button onclick="window.location.href='settings.html'">إعدادات</button>
+        <button onclick="window.location.href='leaderboard.html'">ترتيب الرصيد</button>
+        <button onclick="window.location.href='about.html'">حول اللعبة</button>
+        <button onclick="window.location.href='index.html'">تسجيل الخروج</button>
+        
+    </div>
+</div>
+    <audio id="bg-music" src="../sounds/start.mp3" loop></audio>
+    <audio id="correct-sound" src="../sounds/movequestion.mp3"></audio>
+    <audio id="wrong-sound" src="../sounds/movequestion.mp3"></audio>
+    <audio id="transition-sound" src="../sounds/movequestion.mp3"></audio>
+   <script src="../js/indexScript.js"></script>
+</body>
+</html>
