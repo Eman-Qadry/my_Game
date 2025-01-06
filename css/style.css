@@ -75,7 +75,29 @@ body{
 .left_side_helpers img{
     width: 80px;
 }
+.topScore{
+color:white;
+font-size: 32px;
 
+}
+.icon-container {
+    display: flex;
+    gap: 10px;
+}
+.icon-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon-btn:hover {
+    color: #007bff; /* Highlight on hover */
+}
 .right_side{
     display: flex;
     width: 20%;

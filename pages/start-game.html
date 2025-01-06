@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من سيربح المليون</title>
-    <link rel="stylesheet" href="../css/commonStyle.css">
+    <link rel="stylesheet" href="../css/start.css">
+ 
+  
 </head>
-<body dir="rtl">
-    <header>
-        <h1>مرحباً بك في لعبة "من سيربح المليون"</h1>
-    </header>
+<body >
+   
     <main class="startGame">
+        <h1>مرحباً بك في لعبة من سيربح المليون</h1>
         <!-- Name Input Section -->
         <section class="player-info">
-            <h2>أدخل اسمك للبدء</h2>
-            <input type="text" id="player-name" placeholder="اسم اللاعب" required>
-            <button onclick="savePlayerName()">ابدأ اللعبة</button>
+            <div class="inputDiv" >
+                <input type="text" id="player-name" placeholder="اسم اللاعب"  title="يجب ان يحتوي الاسم ع حروف فقط" required>
+          
+        </div>
+      <div class="buttonsdiv">
+            <button onclick="savePlayerName()">start</button>
+            <button onclick=" menuBack()">cancel</button>
+        </div>
         </section>
     </main>
     <footer>

@@ -1,5 +1,10 @@
+let currentUser = { name: "Player1", score: 0 ,question: 1}; // Replace with dynamic user name
+let allUsers = JSON.parse(localStorage.getItem("allUsers")) || [];
 var lifelineUsed = false; // Track if the "50:50" lifeline has been used
 var currentQuestionIndex = 0;
+var ismuted=false;
+let milestones = [ 0, 1000, 32000];
+var questionsLength = 15;
 var changeUsed=false;
 var questions = [];
 var score = 0;
@@ -116,10 +121,29 @@ function checkAnswer(selectedElement, selectedIndex) {
   if (selectedIndex === currentQuestion.correct) {
     
     playSound("correctQuestion");
+    
     selectedElement.classList.add("twinkle-correct");
     score += 1;
 
-    scoreElements[score - 1].classList.add("active_list");
+    scoreElements[score ].classList.add("active_list");
+
+
+    currentUser.question++;
+
+    // Calculate the new score
+    if (currentUser.question <= 5) {
+        currentUser.score += 100 * Math.pow(2, currentUser.question - 1); // Stage 1
+    } else if (currentUser.question <= 10) {
+        currentUser.score += 2000 * Math.pow(2, currentUser.question - 6); // Stage 2
+    } else {
+        currentUser.score += 50000 * Math.pow(2, currentUser.question - 11); // Stage 3
+    }
+
+    if (currentUser.question === questions) {
+      alert("Congratulations! You've won 1 million SAR!");
+      saveUserScore();
+  }
+
     currentQuestionIndex += 1;
 
     setTimeout(() => {
@@ -138,6 +162,26 @@ function checkAnswer(selectedElement, selectedIndex) {
     // Wrong answer: Twinkle with red
     playSound("wrongAnswer");
     selectedElement.classList.add("twinkle-wrong");
+
+
+    if (currentUser.question <= 5) {
+      currentUser.score = 0; // Lose all in Stage 1
+  } else if (currentUser.question <= 10) {
+      currentUser.score = milestones[1]; // Return to Stage 1 milestone
+  } else {
+      currentUser.score = milestones[2]; // Return to Stage 2 milestone
+  }
+  scoreElements[currentUser.question - 1].classList.add("active_list");
+  alert(`Game Over! You earned ${currentUser.score} SAR.`);
+  saveUserScore();
+
+
+
+
+
+
+
+
 
     setTimeout(() => {
       alert("إجابة خاطئة! اللعبة انتهت.");
@@ -330,10 +374,47 @@ function changeQuestion(){
 
 }
  function initializeCall(){
+  helper2.classList.add('disallowed');
   const currentQu=questions[currentQuestionIndex];
   const answer=currentQu.options[currentQu.correct];
   playSound("callFriend");
   setTimeout(()=>{
 alert(`صديقك يقول ان الاجابة الصجيجة هي ${answer}`);
   },17000);
+}
+
+
+function updateUserScore(newScore) {
+  currentUser.score += newScore;
+
+  const scoreboard = document.getElementById("user-scoreboard");
+  scoreboard.innerHTML = ""; // Clear current list
+
+  // Display current user's score dynamically
+  let listItem = document.createElement("li");
+  listItem.textContent = `${currentUser.score}`;
+  scoreboard.appendChild(listItem);
+}
+
+
+function saveUserScore() {
+  allUsers.push(currentUser);
+  localStorage.setItem("allUsers", JSON.stringify(allUsers));
+}
+function toggleAudio(){
+  var audioIcon = document.getElementById("audio-icon"); 
+  if(ismuted===true){
+    ismuted=false;
+    audioIcon.className = "fas fa-volume-up";}
+    
+  else {
+    ismuted=true
+    audioIcon.className = "fas fa-volume-mute";
+  }
+  const audios = document.querySelectorAll("audio");
+  const videos = document.querySelectorAll("video");
+
+            // Mute or unmute each element
+            audios.forEach(audio => audio.muted = ismuted);
+            videos.forEach(video => video.muted = ismuted);
 }
