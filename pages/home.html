@@ -27,6 +27,11 @@
     </div>
     <div class="left_side">
         <div class="left_side_helpers">
+            <div class="endPlaying" id="endPlaying">
+                <p>انسحاب</p>
+               
+            
+            </div>
             <div class="helper1" id="helper1">
                 <p>50:50</p>
                 <i class="fa-solid fa-xmark" id="red-x1"></i>
@@ -89,6 +94,16 @@
     </div>
 </div>
 
+ <!-- Custom Confirm Dialog -->
+ <div class="overlay" id="customConfirm">
+    <div class="dialog-box">
+      <h2>هل أنت متأكد من أنك تريد الانسحاب؟</h2>
+      <div class="dialog-buttons">
+        <button class="confirm-btn" onclick="handleConfirm(true)">Yes</button>
+        <button class="cancel-btn" onclick="handleConfirm(false)">No</button>
+      </div>
+    </div>
+  </div>
 
 <script src="../js/indexScript.js"></script>
     <script src="../js/script.js"></script>

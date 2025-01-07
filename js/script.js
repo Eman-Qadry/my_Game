@@ -1,4 +1,7 @@
 let currentUser = { name: "Player1", score: 0 ,question: 1}; // Replace with dynamic user name
+const scoreArray = [
+  0,100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000
+];
 let allUsers = JSON.parse(localStorage.getItem("allUsers")) || [];
 var lifelineUsed = false; // Track if the "50:50" lifeline has been used
 var currentQuestionIndex = 0;
@@ -28,6 +31,12 @@ var score = 0;
   var red_x2=document.getElementById("red-x2");
   var red_x3=document.getElementById("red-x3");
   var red_x4=document.getElementById("red-x4");
+
+
+
+
+  var endplaying=document.getElementById("endPlaying")
+  endplaying.addEventListener("click",withdraw);
 
   helper1.addEventListener("click", deleteTwoAnswers);
 
@@ -172,21 +181,13 @@ function checkAnswer(selectedElement, selectedIndex) {
       currentUser.score = milestones[2]; // Return to Stage 2 milestone
   }
   scoreElements[currentUser.question - 1].classList.add("active_list");
-  alert(`Game Over! You earned ${currentUser.score} SAR.`);
+  
   saveUserScore();
-
-
-
-
-
-
-
-
 
     setTimeout(() => {
       alert("إجابة خاطئة! اللعبة انتهت.");
       stopSound("wrongAnswer");
-      resetGame();
+   
     }, 18000); // Delay to allow animation
   }
 }
@@ -398,8 +399,13 @@ function updateUserScore(newScore) {
 
 
 function saveUserScore() {
+  currentUser.name=localStorage.getItem("playerName");
   allUsers.push(currentUser);
+  localStorage.setItem("currentUser",JSON.stringify(currentUser));
   localStorage.setItem("allUsers", JSON.stringify(allUsers));
+ 
+  window.location.href ='cheque.html'
+
 }
 function toggleAudio(){
   var audioIcon = document.getElementById("audio-icon"); 
@@ -418,3 +424,45 @@ function toggleAudio(){
             audios.forEach(audio => audio.muted = ismuted);
             videos.forEach(video => video.muted = ismuted);
 }
+
+
+
+function withdraw(){
+  const customConfirm = document.getElementById("customConfirm");
+  customConfirm.style.display = "flex";
+}
+
+function handleConfirm(isConfirmed) {
+  const customConfirm = document.getElementById("customConfirm");
+  customConfirm.style.display = "none"; // Hide the dialog
+  currentUser.name=localStorage.getItem("playerName");
+  currentUser.score= scoreArray[score];
+  console.log(currentUser);
+  if (isConfirmed===true) {
+   setTimeout(()=>{
+   
+    localStorage.setItem("currentUser",JSON.stringify(currentUser));
+ window.location.href ='cheque.html'
+   },2000)
+  } else {
+   
+    // Continue the game without any changes
+  }
+}
+
+function savePlayerName(){
+  const playername=document.getElementById("player-name");
+  if (playername.value.trim() === "") {
+    alert("يرجى إدخال اسم اللاعب.");
+    return;
+}
+  currentUser.name=playername.value;
+
+ 
+localStorage.setItem("playerName", playername.value); // Save name for later use
+
+window.location.href = "home.html"; // Redirect to the game page
+
+
+}
+

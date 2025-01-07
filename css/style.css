@@ -29,12 +29,12 @@ body{
 
 .left_side_helpers{
     display: flex;
-    gap: 15px;
+    gap: 14px;
     justify-content: center;
     position: relative;
 }
 
-.helper1, .helper2, .helper3,.helper4{
+.helper1, .helper2, .helper3,.helper4,.endPlaying{
     width: 150px;
     border-radius: 50%;
     border: 5px solid blue;
@@ -100,7 +100,7 @@ font-size: 32px;
 }
 .right_side{
     display: flex;
-    width: 20%;
+    width: 17%;
     flex-direction: column-reverse;
     color: white;
     text-align: right;
@@ -202,4 +202,68 @@ ul li{
   #opinion-chart{
     width: 60%;
     height: auto;
+  }
+
+   /* Style for the overlay */
+   .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+  }
+
+  /* Style for the dialog box */
+  .dialog-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+  }
+
+  .dialog-box h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+  }
+
+  /* Buttons style */
+  .dialog-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  .dialog-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .confirm-btn {
+    background-color: #4caf50;
+    color: #fff;
+  }
+
+  .cancel-btn {
+    background-color: #f44336;
+    color: #fff;
+  }
+
+  .confirm-btn:hover {
+    background-color: #45a049;
+  }
+
+  .cancel-btn:hover {
+    background-color: #d32f2f;
   }

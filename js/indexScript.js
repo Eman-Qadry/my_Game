@@ -109,17 +109,7 @@ function menuBack(){
     
   
 }
-function showInstructions() {
-    alert("Instructions are under development.");
-}
 
-function showSettings() {
-    alert("Settings are under development.");
-}
-
-function showLeaderboard() {
-    alert("Leaderboard is under development.");
-}
 
 function reviewQuestions() {
     alert("Review questions is under development.");
@@ -153,15 +143,4 @@ function stopNumbers(){
     menuElement.style.display = "inline-block";
     menuImg.style.display = "inline-block";
     localStorage.setItem("returnBack", "false");
-}
-function savePlayerName() {
-    const playerName = document.getElementById('player-name').value;
-    if (playerName.trim() === "") {
-        alert("يرجى إدخال اسم اللاعب.");
-        return;
-    }
-    localStorage.setItem("playerName", playerName); // Save name for later use
-
-    window.location.href = "home.html"; // Redirect to the game page
-   
 }

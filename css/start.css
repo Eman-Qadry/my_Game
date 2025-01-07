@@ -1,97 +1,99 @@
+
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-   
-   
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+ 
+ 
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
 
 h1{
 
-  color: #0056b3;
+color: #0056b3;
 }
-  
-  
 
-  .play-text {
-    font-size: 18px;
-    color: black;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  .startGame {
-    width: 40%;
-   position: relative;
-   top:20%;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-   justify-items: center;
+
+
+.play-text {
+  font-size: 18px;
+  color: black;
+  margin-top: 10px;
+  font-weight: bold;
 }
-footer {
-  background-color: #001f3f;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: #ffdc00;
-  justify-items: center;
-  font-size: 0.9rem;
-}
-input {
-  padding: 15px 30px;
-  height: 20px;
-  border-radius: 10px;;
-  margin-bottom: 10px;
-  font-size: 1.2em;
-  border-radius: 25px;
-display: block;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-}
-p{
- 
-  text-align: right;
-}
-.inputDiv{
-  width: 80%;
-}
-.player-info {
-  width: 80%;
-  background-color: #f0f0f0;
+.startGame {
+  width: 40%;
+ position: relative;
+ top:20%;
+  margin: auto;
+  background: white;
   padding: 20px;
   border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ justify-items: center;
+}
+footer {
+background-color: #001f3f;
+padding: 10px;
+position: fixed;
+bottom: 0;
+width: 100%;
+color: #ffdc00;
 justify-items: center;
-  text-align: right;
+font-size: 0.9rem;
+}
+input {
+padding: 15px 30px;
+height: 20px;
+border-radius: 10px;;
+margin-bottom: 10px;
+font-size: 1.2em;
+border-radius: 25px;
+display: block;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+p{
+
+text-align: right;
+}
+.inputDiv{
+width: 80%;
+}
+.player-info {
+width: 80%;
+background-color: #f0f0f0;
+padding: 20px;
+border-radius: 15px;
+justify-items: center;
+text-align: right;
 }
 label{
-  font-size: 24px;
-  font-weight: bolder;
+font-size: 24px;
+font-weight: bolder;
 }
 .buttonsdiv{
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(2,48%);
-  gap:10%;
+width: 80%;
+display: grid;
+grid-template-columns: repeat(2,48%);
+gap:10%;
 }
 button {
-  
-  padding: 15px 30px;
-  font-size: 1.2em;
-  color: white;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+
+padding: 15px 30px;
+font-size: 1.2em;
+color: white;
+background-color: #007BFF;
+border: none;
+border-radius: 25px;
+cursor: pointer;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
 
 button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
+background-color: #0056b3;
+box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
 }

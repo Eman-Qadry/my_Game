@@ -59,19 +59,3 @@ button:hover {
 .user-scoreboard li:nth-child(odd) {
     background: #e9ecef;
 }
-button {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    color: white;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-}
-
-button:hover {
-    background-color: #0056b3;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
-}
