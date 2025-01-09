@@ -1,0 +1,120 @@
+body {
+    font-family: 'Arial', sans-serif;
+    direction: rtl;
+    background-image: url("/imgs/win-million-4.jpg");
+    background-image: url('../imgs/win-million-4.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #E0E0E0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.cheque-container {
+    margin: 50px auto;
+    width: 70%;
+}
+
+.cheque {
+    background-color: white;
+    border-radius: 10px;
+
+    color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.cheque .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(138, 138, 226);
+    padding: 0 20px;
+}
+
+.cheque .header h2 {
+    font-size: 1rem;
+    margin: 5px;
+}
+
+.cheque .header .serial-number {
+    font-size: 1.5rem;
+    color: black;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-style: oblique;
+}
+.cheque .body{
+    display: flex;
+}
+.cheque .body-container {
+    padding:20px;
+    margin-top: 20px;
+    text-align: right;
+    width:60%;
+}
+
+.cheque .body-container p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    display: flex;
+    text-align: center;
+}
+.cheque .body-container .line {
+border-bottom:  2px dashed gray;
+display: inline-block;
+width:80%;
+text-align: center;
+}
+.cheque .body-container .title{
+    padding-top: 5px;
+    display: inline-block;
+    width:20%;
+}
+.cheque .signature {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 1rem;
+  
+    width:40%;
+}
+.signatureImg{
+     width:60%; 
+     height:180px;
+     padding: 0 10px;
+}
+.cheque .signature .p{
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 9px;
+}
+.cheque .signature span{
+    font-family: cursive;
+    display: block;
+    font-size: 1em;
+    text-align: center;
+    
+}
+.chFooter{
+    padding:20px;
+    width:100%;
+}
+.chFooter img{
+    width:95%;
+    
+}
+.footer {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.footer p:first-child {
+    color: #FFD700;
+    font-size: 1.5rem;
+}

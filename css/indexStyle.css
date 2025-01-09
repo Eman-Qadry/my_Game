@@ -95,16 +95,18 @@ body, html {
 .menuContainer{
     height: 100%; 
     width: 100%;
+    display: flex;
 }
 .menuContainer img{
     width:48%;
     height: 100%;
-    display: none;
+    display: inline-block;
     border-right: 8px solid #ffffffe4;
 }
 
 #menu {
-    display: none;
+    display: inline-block;
+       
     position: absolute;
    top:20%;
     right:0%;

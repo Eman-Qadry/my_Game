@@ -1,12 +1,12 @@
 
-const currentUser=JSON.parse(localStorage.getItem("currentUser"));
+const current=JSON.parse(localStorage.getItem("currentUser"));
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
 
 
-    // Start the game
+  
    chequeData();
     
   
@@ -21,5 +21,5 @@ document.addEventListener("DOMContentLoaded", () => {
       const newDate=new Date();
       date.innerText=newDate.toLocaleDateString();
       userName.innerText=localStorage.getItem("playerName");
-      amountNumber.innerText=currentUser.score;
+      amountNumber.innerText=current.score;
   }
