@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     
     function startLoading() {
-       // playSound("bg-music");
+        playSound("bg-music");
      
         setTimeout(() => {
             loadingElement.style.display = "none";
@@ -104,10 +104,22 @@ document.addEventListener("DOMContentLoaded", () => {
                    
                   
                     setTimeout(() => {
-                 //   stopSound("bg-music");
+                    stopSound("bg-music");
                     window.location.href='menu.html'
                 }, 1000);
                 }, 4000);
             }
         }, intervalTime);
     }
+
+    function playSound(id) {
+        const sound = document.getElementById(id);
+        sound.currentTime = 0;
+        sound.play();
+      }
+    
+      function stopSound(id) {
+        const sound = document.getElementById(id);
+        sound.pause();
+        sound.currentTime = 0;
+      }

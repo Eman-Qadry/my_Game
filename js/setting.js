@@ -16,7 +16,7 @@ soundControlInput.addEventListener('input', () => {
     const playerName = playerNameInput.value.trim();
     const soundLevel = soundControlInput.value;
   
-    if (playerName) {
+    if (playerName && current) {
       current.name= playerName;
       console.log( currentUser.name)
       localStorage.setItem("currentUser", JSON.stringify(current));

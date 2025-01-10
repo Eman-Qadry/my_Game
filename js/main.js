@@ -125,7 +125,7 @@ function checkAnswer(selectedElement, selectedIndex) {
 
   if (selectedIndex === currentQuestion.correct) {
     
-    playSound("correctQuestion");
+    playSound(`correct${score+1}`);
     
     selectedElement.classList.add("twinkle-correct");
     score += 1;
@@ -152,7 +152,7 @@ function checkAnswer(selectedElement, selectedIndex) {
     currentQuestionIndex += 1;
 
     setTimeout(() => {
-      stopSound("correctQuestion");
+      stopSound(`correct${score}`);
       playSound("transition-sound");
       if (opinionChart)
         chart_container.style.display = 'none';
@@ -162,7 +162,7 @@ function checkAnswer(selectedElement, selectedIndex) {
       } else {
         displayQuestion();
       }
-    }, 6000); // Delay to allow animation
+    }, 5000); // Delay to allow animation
   } else {
     // Wrong answer: Twinkle with red
     playSound("wrongAnswer");
@@ -448,15 +448,29 @@ document.addEventListener("DOMContentLoaded", () => {
   
 });
 
-
 function playSound(id) {
-    const sound = document.getElementById(id);
-    sound.currentTime = 0;
-    sound.play();
+  const sound = document.getElementById(id);
+  if (sound) {
+      if (!sound.paused) {
+          sound.pause(); // Pause if the sound is already playing
+      } else {
+          sound.currentTime = 0; // Reset to the start
+          sound.play(); // Play the sound
+      }
+  } else {
+      console.error(`Element with id "${id}" not found.`);
   }
+}
 
-  function stopSound(id) {
-    const sound = document.getElementById(id);
-    sound.pause();
-    sound.currentTime = 0;
+function stopSound(id) {
+  const sound = document.getElementById(id);
+  if (sound) {
+      if (!sound.paused) {
+          sound.pause(); // Pause the sound
+          sound.currentTime = 0; // Reset to the start
+      }
+  } else {
+      console.error(`Element with id "${id}" not found.`);
   }
+}
+
