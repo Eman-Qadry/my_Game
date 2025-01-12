@@ -49,6 +49,19 @@ body{
     font-size: 25px;
     position: relative;
 }
+.helper1:hover, .helper2:hover, .helper3:hover,.helper4:hover,.endPlaying:hover{
+  
+
+  animation: hover-glow 0.8s infinite alternate;
+}
+@keyframes hover-glow {
+  from {
+    background-color:black;
+  }
+  to {
+    background-color: gold;
+  }
+}
 .helper1 i ,.helper2 i ,.helper3 i ,.helper4 i{
     position: absolute;
    /* Adjust as needed */

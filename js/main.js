@@ -16,7 +16,7 @@ var score = 0;
  var votes;
  var queIndex=1 ///have question number
 
-
+var delay=7000;
 
 const questionElement = document.querySelector(".question");
   const answerElements = document.querySelectorAll(".answers_top div");
@@ -110,7 +110,7 @@ function displayQuestion() {
         element.onclick = () => checkAnswer(element, index);
       },( index+1) * 2000); // Delay increases with index
     });
-  }, 7000);
+  }, delay);
   
 }
 
@@ -119,7 +119,7 @@ function displayQuestion() {
 function checkAnswer(selectedElement, selectedIndex) {
   const currentQuestion = questions[currentQuestionIndex];
   const previousActiveElement = document.querySelector(".active_list");
-
+delay=3000;
   // Remove the active class from the previous element
   if (previousActiveElement) {
     previousActiveElement.classList.remove("active_list");
@@ -155,14 +155,18 @@ function checkAnswer(selectedElement, selectedIndex) {
 
     setTimeout(() => {
       stopSound(`correct${score}`);
-      playSound("transition-sound");
+      
       if (opinionChart)
         chart_container.style.display = 'none';
       if (currentQuestionIndex >= questions.length) {
         alert("تهانينا! ربحت المليون!");
         stopSound("bg-music");
       } else {
+      
+       
         displayQuestion();
+      
+        
       }
     }, 5000); // Delay to allow animation
   } else {
@@ -179,14 +183,17 @@ function checkAnswer(selectedElement, selectedIndex) {
       currentUser.score = milestones[2]; // Return to Stage 2 milestone
   }
   scoreElements[currentUser.question - 1].classList.add("active_list");
-  
-  saveUserScore();
-
-    setTimeout(() => {
-      alert("إجابة خاطئة! اللعبة انتهت.");
-      stopSound("wrongAnswer");
-   
-    }, 18000); // Delay to allow animation
+  setTimeout(() => {
+  answerElements[currentQuestion.correct].classList.add("twinkle-correct");
+  setTimeout(() => {
+    alert("إجابة خاطئة! اللعبة انتهت.");
+    stopSound("wrongAnswer");
+    
+    saveUserScore();
+ 
+  }, 5000);
+  },5000);
+    // Delay to allow animation
   }
 }
 
