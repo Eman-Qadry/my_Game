@@ -14,6 +14,7 @@ var questions = [];
 var score = 0;
  var opinionChart;
  var votes;
+ var queIndex=1 ///have question number
 
 
 
@@ -89,7 +90,8 @@ function displayQuestion() {
   if (!currentQuestion) return;
 
   lifelineUsed = false; // Reset lifeline usage for each question
-  playSound("firstQuestion");
+  playSound(`Question${queIndex}`);
+  queIndex++;
   questionElement.textContent = ""; // Clear question text
   answerElements.forEach((element) => {
     element.textContent = ""; // Clear each answer option
